@@ -1,14 +1,16 @@
+package in.kaixin.leetcode_byhand.tree;
+
 public class ReverseSingleLinke {
 //    https://leetcode-cn.com/problems/reverse-linked-list/submissions/
 
     /**
      * Definition for singly-linked list.
-     * public class ListNode {
+     * public class in.kaixin.leetcode_byhand.tree.ListNode {
      * int val;
-     * ListNode next;
-     * ListNode() {}
-     * ListNode(int val) { this.val = val; }
-     * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     * in.kaixin.leetcode_byhand.tree.ListNode next;
+     * in.kaixin.leetcode_byhand.tree.ListNode() {}
+     * in.kaixin.leetcode_byhand.tree.ListNode(int val) { this.val = val; }
+     * in.kaixin.leetcode_byhand.tree.ListNode(int val, in.kaixin.leetcode_byhand.tree.ListNode next) { this.val = val; this.next = next; }
      * }
      */
     public ListNode reverseList(ListNode head) {

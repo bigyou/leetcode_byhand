@@ -1,3 +1,5 @@
+package in.kaixin.leetcode_byhand.tree;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,19 +29,19 @@ public class TreeMiddleOrderTravel {
 
 }
 
-//class TreeNode {
+//class in.kaixin.leetcode_byhand.tree.TreeNode {
 //    int val;
-//    TreeNode left;
-//    TreeNode right;
+//    in.kaixin.leetcode_byhand.tree.TreeNode left;
+//    in.kaixin.leetcode_byhand.tree.TreeNode right;
 //
-//    TreeNode() {
+//    in.kaixin.leetcode_byhand.tree.TreeNode() {
 //    }
 //
-//    TreeNode(int val) {
+//    in.kaixin.leetcode_byhand.tree.TreeNode(int val) {
 //        this.val = val;
 //    }
 //
-//    TreeNode(int val, TreeNode left, TreeNode right) {
+//    in.kaixin.leetcode_byhand.tree.TreeNode(int val, in.kaixin.leetcode_byhand.tree.TreeNode left, in.kaixin.leetcode_byhand.tree.TreeNode right) {
 //        this.val = val;
 //        this.left = left;
 //        this.right = right;
