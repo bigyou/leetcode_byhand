@@ -1,8 +1,6 @@
 package in.kaixin.leetcode_byhand.other;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 
 public class FindSameInK {
     //    https://leetcode-cn.com/problems/contains-duplicate-ii/
@@ -31,9 +29,23 @@ public class FindSameInK {
         return false;
     }
 
+    public boolean containsNearbyDuplicate2(int[] nums, int k) {
+        Set<Integer> set = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (set.contains(nums[i]) && set.size() <= k) {
+                return true;
+            }
+            if (i >= k) {
+                set.remove(nums[i - k]);
+            }
+            set.add(nums[i]);
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         FindSameInK findSameInK = new FindSameInK();
-        boolean find = findSameInK.containsNearbyDuplicate(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15}, 15);
+        boolean find = findSameInK.containsNearbyDuplicate2(new int[]{1, 2, 1}, 1);
         System.out.println(find);
 
     }
