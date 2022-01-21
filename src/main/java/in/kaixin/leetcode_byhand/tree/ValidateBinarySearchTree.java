@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class ValidateBinarySearchTree {
     //    https://leetcode-cn.com/problems/validate-binary-search-tree/
     public boolean isValidBST(TreeNode root) {

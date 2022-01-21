@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class SumRoot2LeavesNumber {
     //    https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/
     public int sumNumbers(TreeNode root) {

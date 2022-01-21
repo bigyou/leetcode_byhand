@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class Flatten {
     //    https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
     public void flatten(TreeNode root) {

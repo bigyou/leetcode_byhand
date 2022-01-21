@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class MaxPathSum {
     //    https://leetcode-cn.com/problems/binary-tree-maximum-path-sum/
     int max = Integer.MIN_VALUE;

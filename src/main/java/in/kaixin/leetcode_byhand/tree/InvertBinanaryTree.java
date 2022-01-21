@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class InvertBinanaryTree {
 //    https://leetcode-cn.com/problems/invert-binary-tree/
 

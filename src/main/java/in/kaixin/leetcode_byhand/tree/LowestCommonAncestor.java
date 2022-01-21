@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class LowestCommonAncestor {//
 
     //https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/

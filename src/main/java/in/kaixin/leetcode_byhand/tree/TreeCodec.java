@@ -1,5 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
+import in.kaixin.leetcode_byhand.common.TreeNode;
+
 public class TreeCodec {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
