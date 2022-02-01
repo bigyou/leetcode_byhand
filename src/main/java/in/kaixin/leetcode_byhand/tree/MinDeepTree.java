@@ -34,7 +34,7 @@ public class MinDeepTree {
     }
 
     public static void main(String[] args) {
-        TreeNode treeNode = Utils.getTreeNode(new int[]{1, 2, 3, 4, 5});
+        TreeNode treeNode = Utils.getTreeNode(new Integer[]{1, 2, 3, 4, 5});
         MinDeepTree minDeepTree = new MinDeepTree();
         System.out.println(minDeepTree.minDepth(treeNode));
     }

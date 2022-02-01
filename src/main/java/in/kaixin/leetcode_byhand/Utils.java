@@ -20,7 +20,7 @@ public class Utils {
         return root;
     }
 
-    public static TreeNode getTreeNode(int[] nums) {
+    public static TreeNode getTreeNode(Integer[] nums) {
         if (nums == null || nums.length == 0) {
             return null;
         }
@@ -29,6 +29,9 @@ public class Utils {
         List<TreeNode> list = new LinkedList<>();
         list.add(root);
         for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == null) {
+                continue;
+            }
             TreeNode node = new TreeNode();
             node.setVal(nums[i]);
             if ((i - 1) % 2 == 0) {//左节点
