@@ -40,10 +40,10 @@ public class CanFinish {
             boolean existLoop = travel(graphMap, path, visitPath, visited);
             visitPath.remove(curPath);
             if (existLoop) {
-                return existLoop;
+                return existLoop ;
             }
         }
-        visited.add(v);
+        visited.add(v );
         return false;
     }
 
