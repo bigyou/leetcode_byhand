@@ -1,7 +1,7 @@
 package in.kaixin.leetcode_byhand.tree;
 
-import in.kaixin.leetcode_byhand.Utils;
 import in.kaixin.leetcode_byhand.common.TreeNode;
+import in.kaixin.leetcode_byhand.utils.Utils;
 
 public class Balanced {
     //    https://leetcode-cn.com/problems/balanced-binary-tree/

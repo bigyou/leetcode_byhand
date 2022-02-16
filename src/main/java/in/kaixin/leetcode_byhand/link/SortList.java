@@ -1,7 +1,7 @@
 package in.kaixin.leetcode_byhand.link;
 
 import in.kaixin.leetcode_byhand.ListNode;
-import in.kaixin.leetcode_byhand.Utils;
+import in.kaixin.leetcode_byhand.utils.Utils;
 
 import java.util.Currency;
 import java.util.LinkedList;

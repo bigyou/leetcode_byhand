@@ -1,5 +1,6 @@
-package in.kaixin.leetcode_byhand;
+package in.kaixin.leetcode_byhand.utils;
 
+import in.kaixin.leetcode_byhand.ListNode;
 import in.kaixin.leetcode_byhand.common.TreeNode;
 
 import java.util.LinkedList;

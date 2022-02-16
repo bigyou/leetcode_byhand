@@ -1,31 +1,38 @@
 package in.kaixin.leetcode_byhand;
 
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 public class BracketLcci {
     //    https://leetcode-cn.com/problems/bracket-lcci/
     public List<String> generateParenthesis(int n) {
-        return null;
+        List<String> res = new LinkedList<>();
+        generate("", n, n, res);
+        return res;
 
     }
 
-    public Set<String> generate(int n) {
-
-        if (n == 1) {
-            Set<String> res = new HashSet<>();
-            res.add("()");
-            return res;
+    public void generate(String str, int left, int right, List<String> res) {
+        if (right < left) {
+            return;
         }
-        Set<String> generate = generate(n - 1);
-        Set<String> res = new HashSet<>();
-        for (int i = 0; i < res.size(); i++) {
-
+        if (left == right && left == 0) {
+            res.add(str);
+            return;
         }
-        return null;
+        if (left >= 1) {
+            generate(str + "(", left - 1, right, res);
+        }
+        if (right >= 1) {
+            generate(str + ")", left, right - 1, res);
+        }
+    }
 
-
+    public static void main(String[] args) {
+        BracketLcci bracketLcci = new BracketLcci();
+        List<String> strings = bracketLcci.generateParenthesis(4);
+        for (String string : strings) {
+            System.out.println(string);
+        }
     }
 }
