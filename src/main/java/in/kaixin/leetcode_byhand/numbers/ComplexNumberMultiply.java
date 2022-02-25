@@ -1,7 +1,5 @@
 package in.kaixin.leetcode_byhand.numbers;
 
-import in.kaixin.leetcode_byhand.CombinationSum;
-
 public class ComplexNumberMultiply {
     //    https://leetcode-cn.com/problems/complex-number-multiplication/
     public String complexNumberMultiply(String num1, String num2) {
