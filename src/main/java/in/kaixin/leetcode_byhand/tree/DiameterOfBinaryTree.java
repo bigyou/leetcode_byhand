@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class DiameterOfBinaryTree {
-    public int diameterOfBinaryTree(TreeNode root) {
+    public int diameterOfBinaryTree2(TreeNode root) {
         List<TreeNode> nodeList = new LinkedList<>();
         nodeList.add(root);
         int res = Integer.MIN_VALUE;
@@ -36,6 +36,25 @@ public class DiameterOfBinaryTree {
             return 0;
         }
         return Math.max(maxPath(node.left) + 1, maxPath(node.right) + 1);
+    }
+
+
+    int res = Integer.MIN_VALUE;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        maxDeep(root);
+        return res;
+    }
+
+    public int maxDeep(TreeNode node) {
+        if (node == null) {
+            return 0;
+        }
+
+        int L = maxDeep(node.left);
+        int R = maxDeep(node.right);
+        res = Math.max(L + R, res);
+        return Math.max(L, R) + 1;
     }
 
     public static void main(String[] args) {
