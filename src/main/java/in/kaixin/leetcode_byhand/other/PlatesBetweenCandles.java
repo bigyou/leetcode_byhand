@@ -3,6 +3,7 @@ package in.kaixin.leetcode_byhand.other;
 import com.alibaba.fastjson.JSON;
 
 public class PlatesBetweenCandles {
+//    https://leetcode-cn.com/problems/plates-between-candles/
     public static void main(String[] args) {
         PlatesBetweenCandles platesBetweenCandles = new PlatesBetweenCandles();
         System.out.println(JSON.toJSONString(platesBetweenCandles.platesBetweenCandles("***|**|*****|**||**|*", new int[][]{{1, 17}, {4, 5}, {14, 17}, {5, 11}, {15, 16}})));
