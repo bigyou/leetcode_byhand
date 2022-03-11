@@ -8,7 +8,7 @@ public class Flatten {
         doFlatten(root);
     }
 
-    public void doFlatten(TreeNode node) {
+    public void doFlatten(TreeNode node) { //
         if (node == null) {
             return;
         }
