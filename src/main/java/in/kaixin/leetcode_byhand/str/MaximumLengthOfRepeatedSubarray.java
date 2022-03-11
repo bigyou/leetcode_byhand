@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class MaximumLengthOfRepeatedSubarray {
+
     public int findLength2(int[] nums1, int[] nums2) {//这个做法会超时
         int[] least = nums1.length > nums2.length ? nums2 : nums1;
         int[] more = nums1.length > nums2.length ? nums1 : nums2;
@@ -38,13 +39,20 @@ public class MaximumLengthOfRepeatedSubarray {
         return max;
     }
 
-//                              3 2 1 4 7
-//                            1 0 0 1 0 0
-//                            2 0 1 1 0 0
-//                            3 1 0 0 0 0
-//                            2 0 2 0 0 0
-//                            1 0 0 3 0 0
 
+    /**
+     * N 3 2 1 4 7
+     * 1 0 0 1 0 0
+     * 2 0 1 1 0 0
+     * 3 1 0 0 0 0
+     * 2 0 2 0 0 0
+     * 1 0 0 3 0 0
+     * 用了dp 数组
+     *
+     * @param nums1
+     * @param nums2
+     * @return
+     */
     public int findLength(int[] nums1, int[] nums2) {
         int max = 0;
         int matrix[][] = new int[nums1.length + 1][nums2.length + 1];
@@ -58,6 +66,7 @@ public class MaximumLengthOfRepeatedSubarray {
         }
         return max;
     }
+
 
     public static void main(String[] args) {
         MaximumLengthOfRepeatedSubarray maximumLengthOfRepeatedSubarray = new MaximumLengthOfRepeatedSubarray();
