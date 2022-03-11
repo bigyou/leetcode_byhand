@@ -7,7 +7,7 @@ public class LRUCache { //
     //    https://leetcode-cn.com/problems/lru-cache/
     Map<Integer, ListNode> valueMap = new HashMap<>();
     Integer capacity = null;
-    ListNode head;
+    ListNode head;//head for
     ListNode last;
 
     public LRUCache(int capacity) {
