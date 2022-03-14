@@ -11,7 +11,6 @@ public class Cyclic {
         ListNode onecursor = head;
         ListNode twocursor = head.next;
         boolean hasCycle = false;
-        int mettimes = 0;
         while (!hasCycle) {
             if (onecursor.next == null || twocursor == null || twocursor.next == null || twocursor.next.next == null) {
                 return hasCycle;
