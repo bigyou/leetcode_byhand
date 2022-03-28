@@ -64,7 +64,7 @@ public class SurroundedRegions {
     }
 
 
-    public void solve(char[][] board) { //参考了题解
+    public void solve(char[][] board) { //参考了题解 dfs
         for (int i = 0; i < board.length; i++) {
             doSolveEdge(board, i, 0);
             doSolveEdge(board, i, board[0].length - 1);
