@@ -5,11 +5,11 @@ import com.alibaba.fastjson.JSON;
 import java.io.*;
 import java.util.*;
 
-public class BusiestServers {//TODO
+public class BusiestServers {//TODO 会超时
     //    https://leetcode-cn.com/problems/find-servers-that-handled-most-number-of-requests/
     Map<Integer, List<Integer>> timeOutMap = null;
-    Set<Integer> idleSet = null;
-    PriorityQueue<Integer> priorityQueue =new PriorityQueue<>();
+    TreeSet<Integer> idleSet = null;
+    int max = 0;
 
     public List<Integer> busiestServers(int k, int[] arrival, int[] load) {
         if (k == 1) {
@@ -18,7 +18,9 @@ public class BusiestServers {//TODO
             return res;
         }
         timeOutMap = new HashMap<>();
-        idleSet = new HashSet<>();
+        idleSet = new TreeSet<>();
+        max = 0;
+
         int[] workcnt = new int[arrival.length];
         int i = 0;
         int time = 0;
@@ -30,22 +32,16 @@ public class BusiestServers {//TODO
             i++;
 
         }
-        return findoutMaxList(workcnt);
+        return findoutMaxList(workcnt, max);
 
     }
 
-    public List<Integer> findoutMaxList(int[] workcnt) {
-        int max = 0;
+    public List<Integer> findoutMaxList(int[] workcnt, int max) {
+
         List<Integer> maxCntList = new LinkedList<>();
         for (int i = 0; i < workcnt.length; i++) {
-            if (workcnt[i] > max) {
-                maxCntList.clear();
-                max = workcnt[i];
+            if (workcnt[i] == max) {
                 maxCntList.add(i);
-            } else if (workcnt[i] == max) {
-                maxCntList.add(i);
-            } else {
-
             }
         }
         return maxCntList;
@@ -59,18 +55,15 @@ public class BusiestServers {//TODO
     }
 
     public int getMachine(int machinecnt, int index, int currentTime, int costTime, int[] workcnt) {
-        int machineId = -1;
+        Integer machineId = -1;
         if (idleSet.size() == 0) {
             return machineId;//放弃任务
         }
-
-        for (int i = index % machinecnt; i < 2 * machinecnt; i++) {
-            if (idleSet.contains(i % machinecnt)) {
-                machineId = i % machinecnt;
-                idleSet.remove(machineId);
-                break;
-            }
+        machineId = idleSet.ceiling(index % machinecnt);
+        if (machineId == null) {
+            machineId = idleSet.first();
         }
+
         if (machineId != -1) {
             List<Integer> list = timeOutMap.get(currentTime + costTime);
             if (list == null) {
@@ -79,6 +72,8 @@ public class BusiestServers {//TODO
             }
             list.add(machineId);
             workcnt[machineId] = workcnt[machineId] + 1;
+            max = Math.max(workcnt[machineId], max);
+            idleSet.remove(machineId);
 
         }
 
@@ -94,8 +89,6 @@ public class BusiestServers {//TODO
                 list.clear();
             }
         }
-
-
     }
 
     public static void main(String[] args) throws IOException {
