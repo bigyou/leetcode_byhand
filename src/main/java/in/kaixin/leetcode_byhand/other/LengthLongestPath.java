@@ -3,6 +3,7 @@ package in.kaixin.leetcode_byhand.other;
 import java.util.Stack;
 
 public class LengthLongestPath {
+//    https://leetcode-cn.com/problems/longest-absolute-file-path/
     public int lengthLongestPath(String input) {
         if (input.indexOf(".") < 0) {
             return 0;
