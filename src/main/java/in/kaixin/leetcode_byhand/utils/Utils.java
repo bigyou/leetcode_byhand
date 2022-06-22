@@ -1,5 +1,6 @@
 package in.kaixin.leetcode_byhand.utils;
 
+import com.alibaba.fastjson.JSON;
 import in.kaixin.leetcode_byhand.ListNode;
 import in.kaixin.leetcode_byhand.common.TreeNode;
 
@@ -7,6 +8,16 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Utils {
+    public static void printNode(ListNode node) {
+        ListNode cursor = node;
+        List<Integer> list = new LinkedList<>();
+        while (cursor != null) {
+            list.add(cursor.val);
+            cursor = cursor.next;
+        }
+        System.out.println(JSON.toJSONString(list));
+    }
+
     public static ListNode getListNode(int[] nums) {
         if (nums == null) {
             return null;
