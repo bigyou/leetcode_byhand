@@ -7,30 +7,50 @@ import java.util.*;
  * @Create 2023/7/5 20:50
  */
 public class TwoSum {
-    public int[] twoSum(int[] nums, int target) {
-        int[] numInOrder = Arrays.stream(nums).sorted().toArray();
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        for (int i = 0; i < nums.length; i++) {
-            List<Integer> positionList = map.get(nums[i]);
-            if (positionList == null) {
-                positionList = new LinkedList<>();
-                map.put(nums[i], positionList);
-            }
-            positionList.add(i);
-        }
+    //    https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/
+//     mid
+    public int[] twoSum(int[] numbers, int target) {
+        int right = numbers.length - 1;
+        int[] res = new int[2];
+        int forward = 0;// 1向右，-1向左
+        for (int i = 0; i < numbers.length - 1; i++) {
+            right = right > numbers.length - 1 ? numbers.length - 1 : right;
+            forward=0;
+            while (right < numbers.length && right > i) {
+                int v = numbers[i] + numbers[right];
+                if (v == target) {
+                    res[0] = i + 1;
+                    res[1] = right + 1;
+                    return res;
+                } else if (v > target) {
+                    if (forward == 1) {
+                        break;
+                    }
+                    if (forward == 0) {
+                        forward = -1;
+                    }
+                    right--;
+                } else {
+                    if (forward == -1) {
+                        break;
+                    }
+                    if (forward == 0) {
+                        forward = 1;
+                    }
+                    right++;
 
-        int left = 0;
-        int right = nums.length - 1;
-        while (left < right) {
-            int sum = numInOrder[left] + numInOrder[right];
-            if (sum > target) {
-                right--;
-            } else if (sum < target) {
-                left++;
-            } else {
-                return new int[]{map.get(numInOrder[left]).remove(0), map.get(numInOrder[right]).remove(0)};
+                }
             }
         }
-        return null;
+        return res;
+    }
+
+    public static void main(String... args) {
+        int[] nums =new int[]{-10,-8,-2,1,2,5,6};
+        TwoSum t =new TwoSum();
+        int[] ints = t.twoSum(nums, 0);
+        System.out.println(ints);
+
+
     }
 }

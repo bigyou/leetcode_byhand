@@ -1,6 +1,5 @@
 package in.kaixin.leetcode_byhand.utils;
 
-import com.alibaba.fastjson.JSON;
 import in.kaixin.leetcode_byhand.ListNode;
 import in.kaixin.leetcode_byhand.common.TreeNode;
 
@@ -15,7 +14,7 @@ public class Utils {
             list.add(cursor.val);
             cursor = cursor.next;
         }
-        System.out.println(JSON.toJSONString(list));
+//        System.out.println(JSON.toJSONString(list));
     }
 
     public static ListNode getListNode(int[] nums) {
